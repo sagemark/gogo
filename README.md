@@ -4,6 +4,9 @@ Cloud Config Server
    * Cloud Server
 * [Configuration](https://github.com/sagemark/gogo/blob/master/spring-microservices-config-server/src/main/resources/application.properties#L1)
 * [@EnableConfigServer](https://github.com/sagemark/gogo/blob/master/spring-microservices-config-server/src/main/java/com/oreilly/cloud/SpringMicroservicesConfigServerApplication.java#L8) added to application 
+* Assuming Java Crypto Jars are installed AND an encrypt.key is set in application.properties, you can POST to server for encrypting and decrypting values
+  * http://localhost:8888/encrypt
+  * http://localhost:8888/decrypt
 
 Cloud Config Client
 * Dependencies
