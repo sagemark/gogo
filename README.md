@@ -14,3 +14,4 @@ Cloud Config Client
   * Had to set management.security.enabled=false to http://localhost:8080/refresh actuator endpoint could be hit
     * Update Config Repo
     * Hit /refresh endpoint
+    * This works because  [@RefreshScope](https://github.com/sagemark/gogo/blob/master/spring-microservices-config-server/spring-microservices-config-client/src/main/java/com/oreilly/cloud/SpringMicroservicesConfigClientApplication.java#L11) was added to the client application.
