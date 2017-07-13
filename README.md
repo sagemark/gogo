@@ -7,6 +7,7 @@ Cloud Config Server
 * Assuming Java Crypto Jars are installed AND an encrypt.key is set in application.properties, you can POST to server for encrypting and decrypting values
   * http://localhost:8888/encrypt
   * http://localhost:8888/decrypt
+  * encrypted values are stored in [client-config-development.properties](https://github.com/sagemark/cloud-config/blob/master/client-config-development.properties#L1)
 
 Cloud Config Client
 * Dependencies
