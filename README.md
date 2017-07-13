@@ -11,3 +11,6 @@ Cloud Config Client
   * Web
   * Actuator
 * [Configuration](https://github.com/sagemark/gogo/blob/master/spring-microservices-config-server/spring-microservices-config-client/src/main/resources/bootstrap.properties#L1) is bootstrap.properties (loaded earlier than application.properties)
+  * Had to set management.security.enabled=false to http://localhost:8080/refresh actuator endpoint could be hit
+    * Update Config Repo
+    * Hit /refresh endpoint
