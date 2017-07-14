@@ -35,6 +35,9 @@ Eureka Server
 Eureka Client
 * Dependency
   * Eureka Discovery
+* Clients registered with the Eureka server
+  * [Client 1](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaClientApplication.java)
+  * [Client 2](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client-2/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaClient2Application.java)
 * Configuration
   * Add [@EnableEurekaClient](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaClientApplication.java#L11) annotation
   * Add [app name and default zone](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/resources/application.properties#L1)
