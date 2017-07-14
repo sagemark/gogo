@@ -18,4 +18,16 @@ Cloud Config Client
   * Had to set management.security.enabled=false to http://localhost:8080/refresh actuator endpoint could be hit
     * Update Config Repo
     * Hit /refresh endpoint
-    * This works because  [@RefreshScope](https://github.com/sagemark/gogo/blob/master/spring-microservices-config-server/spring-microservices-config-client/src/main/java/com/oreilly/cloud/SpringMicroservicesConfigClientApplication.java#L11) was added to the client application.
+    * This works because  [@RefreshScope](https://github.com/sagemark/gogo/blob/master/spring-microservices-config-server/spring-microservices-config-client/src/main/java/com/oreilly/cloud/SpringMicroservicesConfigClientApplication.java#L11) was added to the client application8761
+    
+Eureka Server
+* Dependency
+  * Eureka Server
+* Add [@EnableEurekaServer](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaServerApplication.java#L9) annotation
+* Configure [server 1](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/src/main/resources/application-peer1.properties#L1) and [server 2](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/src/main/resources/application-peer2.properties#L1)
+* Ensure the following entries are in hosts file
+  * 127.0.0.1 peer1
+  * 127.0.0.1 peer2
+* Hit the following urls and see the respective peer references as replica
+  * http://localhost:8761
+  * http://localhost:8762
