@@ -26,8 +26,20 @@ Eureka Server
 * Add [@EnableEurekaServer](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaServerApplication.java#L9) annotation
 * Configure [server 1](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/src/main/resources/application-peer1.properties#L1) and [server 2](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/src/main/resources/application-peer2.properties#L1)
 * Ensure the following entries are in hosts file
-  * 127.0.0.1 peer1
-  * 127.0.0.1 peer2
+  * 127.0.0.1 peer1 (Run peer1 profile: -Dspring.profiles.active=peer1)
+  * 127.0.0.1 peer2 (Run peer2 profile: -Dspring.profiles.active=peer2)
 * Hit the following urls and see the respective peer references as replica
   * http://localhost:8761
   * http://localhost:8762
+  
+Eureka Client
+* Dependency
+  * Eureka Discovery
+* Clients registered with the Eureka server
+  * [Client 1](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaClientApplication.java)
+  * [Client 2](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client-2/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaClient2Application.java)
+* Configuration
+  * Add [@EnableEurekaClient](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaClientApplication.java#L11) annotation
+  * Add [app name and default zone](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/resources/application.properties#L1)
+  * Add [http://localhost:8888/serviceinfo](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client-2/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaClient2Application.java#L20) request mapping that uses EurekaClient
+  * Create [http://localhost:8080/execute](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/java/com/oreilly/cloud/ExampleController.java#L14) mapping that accesses other registered client through service name.
