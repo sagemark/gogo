@@ -26,8 +26,8 @@ Eureka Server
 * Add [@EnableEurekaServer](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaServerApplication.java#L9) annotation
 * Configure [server 1](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/src/main/resources/application-peer1.properties#L1) and [server 2](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/src/main/resources/application-peer2.properties#L1)
 * Ensure the following entries are in hosts file
-  * 127.0.0.1 peer1
-  * 127.0.0.1 peer2
+  * 127.0.0.1 peer1 (Run peer1 profile: -Dspring.profiles.active=peer1)
+  * 127.0.0.1 peer2 (Run peer2 profile: -Dspring.profiles.active=peer2)
 * Hit the following urls and see the respective peer references as replica
   * http://localhost:8761
   * http://localhost:8762
