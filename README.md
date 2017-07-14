@@ -31,3 +31,12 @@ Eureka Server
 * Hit the following urls and see the respective peer references as replica
   * http://localhost:8761
   * http://localhost:8762
+  
+Eureka Client
+* Dependency
+  * Eureka Discovery
+* Configuration
+  * Add [@EnableEurekaClient](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaClientApplication.java#L11) annotation
+  * Add [app name and default zone](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/resources/application.properties#L1)
+  * Add [http://localhost:xxxx/serviceinfo](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client-2/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaClient2Application.java#L20) request mapping that uses EurekaClient
+  * Create [http://localhost:xxx/execute](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/java/com/oreilly/cloud/ExampleController.java#L14) mapping that accesses other registered client through service name.
