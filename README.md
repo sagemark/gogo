@@ -53,3 +53,4 @@ Hystrix Server
 * Add [@EnableHystrix and @EnableHystrixDashboard](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service/spring-microservices-hystrix/src/main/java/com/oreilly/cloud/SpringMicroservicesHystrixApplication.java#L23) annotations
 * Create [@RequestMapping](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service/spring-microservices-hystrix/src/main/java/com/oreilly/cloud/SpringMicroservicesHystrixApplication.java#L35) that sends call to a [simple microservice](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service/src/main/java/com/oreilly/cloud/SpringMicroservicesSimpleServiceApplication.java#L15). Failover method and timeout configured.
 * Check out [wiki](https://github.com/Netflix/Hystrix/wiki/Configuration) for other configuration options
+* Access Hystrix dashboard at http://localhost:8080/hystrix and input http://localhost:8080/hystrix.stream into the input field
