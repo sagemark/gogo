@@ -43,3 +43,14 @@ Eureka Client
   * Add [app name and default zone](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/resources/application.properties#L1)
   * Add [http://localhost:8888/serviceinfo](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client-2/src/main/java/com/oreilly/cloud/SpringMicroservicesEurekaClient2Application.java#L20) request mapping that uses EurekaClient
   * Create [http://localhost:8080/execute](https://github.com/sagemark/gogo/blob/master/spring-microservices-eureka-server/spring-microservices-eureka-client/src/main/java/com/oreilly/cloud/ExampleController.java#L14) mapping that accesses other registered client through service name.
+  
+Hystrix Server
+* Dependencies
+  * Hystrix
+  * Hystrix Dashboard
+  * Web
+  * Actuator
+* Configuration
+* Add [@EnableHystrix and @EnableHystrixDashboard](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service/spring-microservices-hystrix/src/main/java/com/oreilly/cloud/SpringMicroservicesHystrixApplication.java#L23) annotations
+* Create [@RequestMapping](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service/spring-microservices-hystrix/src/main/java/com/oreilly/cloud/SpringMicroservicesHystrixApplication.java#L35) that sends call to a simple microservice. Failover method and timeout configured.
+* Check out [wiki](https://github.com/Netflix/Hystrix/wiki/Configuration) for other configuration options
