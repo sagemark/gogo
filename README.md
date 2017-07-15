@@ -54,3 +54,12 @@ Hystrix Server
 * Create [@RequestMapping](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service/spring-microservices-hystrix/src/main/java/com/oreilly/cloud/SpringMicroservicesHystrixApplication.java#L35) that sends call to a [simple microservice](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service/src/main/java/com/oreilly/cloud/SpringMicroservicesSimpleServiceApplication.java#L15). Failover method and timeout configured.
 * Check out [wiki](https://github.com/Netflix/Hystrix/wiki/Configuration) for other configuration options
 * Access Hystrix dashboard at http://localhost:8080/hystrix and input http://localhost:8080/hystrix.stream into the input field
+
+Ribbon
+* Dependencies
+  * Ribbon
+  * Web
+* Annotate with [@RibbonClient](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service-2/spring-microservices-ribbon/src/main/java/com/oreilly/cloud/SpringMicroservicesRibbonApplication.java#L15) and give name to service
+* Set up [@RequestMapping](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service-2/spring-microservices-ribbon/src/main/java/com/oreilly/cloud/SpringMicroservicesRibbonApplication.java#L29) that uses name specified above (in this case "simple-service-2" as the load balanced domain)
+* [Required Configuration](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service-2/spring-microservices-ribbon/src/main/java/com/oreilly/cloud/SimpleServiceConfiguration.java) for ribbon client
+* [application.properties](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service-2/spring-microservices-ribbon/src/main/resources/application.properties#L1) edits including all the servers that will be load balanced
