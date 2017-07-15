@@ -63,3 +63,14 @@ Ribbon
 * Set up [@RequestMapping](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service-2/spring-microservices-ribbon/src/main/java/com/oreilly/cloud/SpringMicroservicesRibbonApplication.java#L29) that uses name specified above (in this case "simple-service-2") as the load balanced domain
 * [Required Configuration](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service-2/spring-microservices-ribbon/src/main/java/com/oreilly/cloud/SimpleServiceConfiguration.java) for ribbon client
 * [application.properties](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service-2/spring-microservices-ribbon/src/main/resources/application.properties#L1) edits including all the servers that will be load balanced
+
+Zuul
+* Dependencies
+  * Zuul
+  * Web
+* Add [@EnableZuulProxy](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service-3/spring-microservices-zuul/src/main/java/com/oreilly/cloud/SpringMicroservicesZuulApplication.java#L9) annotation
+* Add Zuul config to [application.properties](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service-3/spring-microservices-zuul/src/main/resources/application.properties#L4)
+  * zuul.routes.somePath.url=http://localhost:7777 by itself would make all requests to http://localhost:8080/somePath go the the url noted
+  * Adding "zuul.routes.somePath.path=/otherPath/**" would make all requests to http://localhost:8080/otherPath go the the url noted
+  * Adding "zuul.prefix=/apiV1" would make all requests to http://localhost:8080/apiV1/otherPath go the the url noted
+* Creating a custom [Zuul Filter](https://github.com/sagemark/gogo/blob/master/spring-microservices-simple-service-3/spring-microservices-zuul/src/main/java/com/oreilly/cloud/SpringMicroservicesZuulApplication.java#L13) and adding making it available as a bean will ensure the logic of the filter is executed with each request
